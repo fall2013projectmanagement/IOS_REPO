@@ -20,16 +20,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    NSLog(@"back from login");
     myUsername = [self checkIfUserLoggedIn];
     
     if(myUsername != nil){
-        self.loggedInAsLabel.text = [[NSString alloc] initWithFormat:@"You are Logged in as: %@",
-                                     myUsername];
+        self.loggedInAsLabel.text = [[NSString alloc] initWithFormat:@"You are Logged in as: %@",myUsername];
     }
     else{
         self.loggedInAsLabel.text = @"You are not logged in.";
     }
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,12 +64,49 @@
 }
 
 - (IBAction)loginButton:(id)sender {
-    
+    NSString *logBtnText =[[self.loginBtnText titleLabel] text];
+    //NSLog(@"text: %@", [[self.loginBtnText titleLabel] text]);
     //Logs the user in as someone different
-    LoginViewController *myLoginViewController
-    = [self.storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+    if([logBtnText isEqual: @"Login"]){
+        LoginViewController *myLoginViewController
+        = [self.storyboard instantiateViewControllerWithIdentifier:@"loginVC"];
+        
+        [self.navigationController pushViewController:myLoginViewController animated:YES];
+    }else{
+        NSLog(@"user logout");
+        //Call the logUserOut function to log the user out
+        [self logUserOut];
+        [self.loginBtnText setTitle:@"Login" forState:UIControlStateNormal];
+    }
+}
+
+- (void)logUserOut{
+    //delete login_cred.plist
+    //set the LoginDataSingleton to null
+    LoginDataSingleton *myLoginData = [LoginDataSingleton sharedManager];
     
-    [self.navigationController pushViewController:myLoginViewController animated:YES];
+    NSArray *sysPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory ,NSUserDomainMask, YES);
+    NSString *documentsDirectory = [sysPaths objectAtIndex:0];
+    NSString *filePath =  [documentsDirectory stringByAppendingPathComponent:@"login_cred.plist"];
+    
+    NSError *error;
+    if(![[NSFileManager defaultManager] removeItemAtPath:filePath error:&error])
+    {
+        NSLog(@"Couldn't delete the plist file");
+        UIAlertView *loggedOutView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Unable to logout." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [loggedOutView show];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+
+    }else{
+        NSLog(@"plist file deleted");
+        UIAlertView *loggedOutView = [[UIAlertView alloc] initWithTitle:@"Logged out" message:@"You have been logged out." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [loggedOutView show];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        myLoginData.username = nil;
+        myUsername = nil;
+        self.loggedInAsLabel.text = @"You are not logged in.";
+        [self.loginBtnText setTitle:@"Login" forState:UIControlStateNormal];
+    }
     
 }
 - (void) imagePickerController: (UIImagePickerController*) reader didFinishPickingMediaWithInfo: (NSDictionary*) info
@@ -88,15 +127,6 @@
     
     [reader dismissViewControllerAnimated:YES completion:nil];
     
-    /*
-    AttendeeDetailsViewController *attendeeDtlsVC
-    = [self.storyboard instantiateViewControllerWithIdentifier:@"attendeeDtlsVC"];
-    
-    attendeeDtlsVC.conferenceCode = splitResults[0];
-    attendeeDtlsVC.attendeeKey = splitResults[1];
-    [self.navigationController pushViewController:attendeeDtlsVC animated:YES];
-     */
-    
     CheckInViewController *checkInVc = [self.storyboard instantiateViewControllerWithIdentifier:@"checkInVC"];
     
     checkInVc.conferenceCode =splitResults[0];
@@ -111,9 +141,11 @@
     LoginDataSingleton *myLoginData = [LoginDataSingleton sharedManager];
     if (myLoginData.username != nil) {
         NSLog(@"ViewController username: %@", myLoginData.username);
+        [self.loginBtnText setTitle:@"Logout" forState:UIControlStateNormal];
     }
     else{
         NSLog(@"username is nil, will call the login screen");
+        [self.loginBtnText setTitle:@"Login" forState:UIControlStateNormal];
     }
     
     return myLoginData.username;

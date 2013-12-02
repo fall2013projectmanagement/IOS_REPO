@@ -34,7 +34,6 @@
 		D391596A181C5534009B7F4A /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3915969181C5534009B7F4A /* CoreAudio.framework */; };
 		D391596C181C553D009B7F4A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D391596B181C553D009B7F4A /* AVFoundation.framework */; };
 		D391596E181C5555009B7F4A /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D391596D181C5555009B7F4A /* libiconv.dylib */; };
-		D3915971181C5921009B7F4A /* AttendeeDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3915970181C5921009B7F4A /* AttendeeDetailsViewController.m */; };
 		D39159C2181DAA03009B7F4A /* LoginDataSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = D39159C1181DAA03009B7F4A /* LoginDataSingleton.m */; };
 /* End PBXBuildFile section */
 
@@ -103,8 +102,6 @@
 		D3915969181C5534009B7F4A /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		D391596B181C553D009B7F4A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D391596D181C5555009B7F4A /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
-		D391596F181C5921009B7F4A /* AttendeeDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendeeDetailsViewController.h; sourceTree = "<group>"; };
-		D3915970181C5921009B7F4A /* AttendeeDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttendeeDetailsViewController.m; sourceTree = "<group>"; };
 		D39159C0181DAA03009B7F4A /* LoginDataSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginDataSingleton.h; path = ../LoginDataSingleton.h; sourceTree = "<group>"; };
 		D39159C1181DAA03009B7F4A /* LoginDataSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginDataSingleton.m; path = ../LoginDataSingleton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,8 +181,6 @@
 				D337D619184C3B810034D35C /* CheckInViewController.m */,
 				D39159C0181DAA03009B7F4A /* LoginDataSingleton.h */,
 				D39159C1181DAA03009B7F4A /* LoginDataSingleton.m */,
-				D391596F181C5921009B7F4A /* AttendeeDetailsViewController.h */,
-				D3915970181C5921009B7F4A /* AttendeeDetailsViewController.m */,
 				D35F7973181B3812002420E9 /* AppDelegate.h */,
 				D35F7974181B3812002420E9 /* AppDelegate.m */,
 				D35F7976181B3812002420E9 /* Main.storyboard */,
@@ -394,7 +389,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D391593F181C4244009B7F4A /* LoginViewController.m in Sources */,
-				D3915971181C5921009B7F4A /* AttendeeDetailsViewController.m in Sources */,
 				D337D61A184C3B810034D35C /* CheckInViewController.m in Sources */,
 				D35F797B181B3812002420E9 /* ViewController.m in Sources */,
 				D35F7975181B3812002420E9 /* AppDelegate.m in Sources */,

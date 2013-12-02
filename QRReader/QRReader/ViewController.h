@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "LoginViewController.h"
-#import "AttendeeDetailsViewController.h"
 #import "ZBarSDK.h"
 #import "LoginDataSingleton.h"
 #import "CheckInViewController.h"
@@ -18,5 +17,6 @@
 - (IBAction)startScanBtn:(id)sender;
 - (IBAction)loginButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *loggedInAsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtnText;
 
 @end
