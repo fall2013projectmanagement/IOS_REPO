@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D32AD8EE184FC47D0044E8CF /* qrattendance50.png in Resources */ = {isa = PBXBuildFile; fileRef = D32AD8EB184FC47D0044E8CF /* qrattendance50.png */; };
+		D32AD8EF184FC47D0044E8CF /* qrattendance80.png in Resources */ = {isa = PBXBuildFile; fileRef = D32AD8EC184FC47D0044E8CF /* qrattendance80.png */; };
+		D32AD8F0184FC47D0044E8CF /* qrattendance120.png in Resources */ = {isa = PBXBuildFile; fileRef = D32AD8ED184FC47D0044E8CF /* qrattendance120.png */; };
+		D32AD8F2184FC8940044E8CF /* iphone_launch_640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = D32AD8F1184FC8940044E8CF /* iphone_launch_640x960.png */; };
 		D337D61A184C3B810034D35C /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D337D619184C3B810034D35C /* CheckInViewController.m */; };
 		D35F7965181B3812002420E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35F7964181B3812002420E9 /* Foundation.framework */; };
 		D35F7967181B3812002420E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D35F7966181B3812002420E9 /* CoreGraphics.framework */; };
@@ -48,6 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D32AD8EB184FC47D0044E8CF /* qrattendance50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrattendance50.png; sourceTree = "<group>"; };
+		D32AD8EC184FC47D0044E8CF /* qrattendance80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrattendance80.png; sourceTree = "<group>"; };
+		D32AD8ED184FC47D0044E8CF /* qrattendance120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qrattendance120.png; sourceTree = "<group>"; };
+		D32AD8F1184FC8940044E8CF /* iphone_launch_640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone_launch_640x960.png; sourceTree = "<group>"; };
 		D337D618184C3B810034D35C /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInViewController.h; sourceTree = "<group>"; };
 		D337D619184C3B810034D35C /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInViewController.m; sourceTree = "<group>"; };
 		D35F7961181B3812002420E9 /* QRReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +205,10 @@
 		D35F796B181B3812002420E9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D32AD8F1184FC8940044E8CF /* iphone_launch_640x960.png */,
+				D32AD8EB184FC47D0044E8CF /* qrattendance50.png */,
+				D32AD8EC184FC47D0044E8CF /* qrattendance80.png */,
+				D32AD8ED184FC47D0044E8CF /* qrattendance120.png */,
 				D35F796C181B3812002420E9 /* QRReader-Info.plist */,
 				D35F796D181B3812002420E9 /* InfoPlist.strings */,
 				D35F7970181B3812002420E9 /* main.m */,
@@ -364,12 +376,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35F797D181B3812002420E9 /* Images.xcassets in Resources */,
+				D32AD8F0184FC47D0044E8CF /* qrattendance120.png in Resources */,
 				D3915960181C54FA009B7F4A /* zbar-help.html in Resources */,
 				D3915962181C54FA009B7F4A /* zbar-samples.png in Resources */,
 				D3915961181C54FA009B7F4A /* zbar-helpicons.png in Resources */,
+				D32AD8F2184FC8940044E8CF /* iphone_launch_640x960.png in Resources */,
+				D32AD8EE184FC47D0044E8CF /* qrattendance50.png in Resources */,
 				D391595F181C54FA009B7F4A /* zbar-back.png in Resources */,
 				D35F796F181B3812002420E9 /* InfoPlist.strings in Resources */,
 				D35F7978181B3812002420E9 /* Main.storyboard in Resources */,
+				D32AD8EF184FC47D0044E8CF /* qrattendance80.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
